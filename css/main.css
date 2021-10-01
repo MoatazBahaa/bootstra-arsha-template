@@ -1,0 +1,431 @@
+:root{
+  scroll-behavior: smooth;
+  --main-color: #37517e;
+  --second-color: #47b2e4;
+}
+.bg-arsha{
+  background-color: #f3f5fa;
+}
+.bg-main{
+  background-color: var(--main-color) !important;
+}
+.text-arsha{
+  color: var(--main-color);
+}
+/* loading */
+.load{
+  z-index: 1021;
+}
+.load .spinner-border{
+  width: 4rem;
+  height: 4rem;
+}
+/* loading */
+
+/* Strat scroll to top */
+.scroll-to-top{
+  position: fixed;
+  z-index: 1200;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all .4s ease !important;
+}
+.scroll-to-top.show{
+  transform: translateY(0);
+  opacity: 1;
+}
+/* End scroll to top */
+
+.padding-y-100{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@keyframes drop{
+  from{
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Start public */
+.sec-title{
+  color: var(--main-color);
+  position: relative;
+}
+.sec-title::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  width: 140px;
+  height: 3px;
+  background-color: #ddd;
+}
+.sec-title::after{
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--second-color);
+}
+.accordion .accordion-header .accordion-button{
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+.accordion .accordion-header .accordion-button:hover, .accordion-button:focus{
+  color: var(--second-color);
+}
+.accordion-button:not(.collapsed){
+  background-color: #fff !important;
+}
+
+button.btn.btn-outline-info:hover{
+  color: #fff;
+
+}
+@media screen and (min-width: 991px){
+  .w-lg-75{
+    width: 75% !important;
+  }
+}
+
+/* show element with animation when reached */
+@keyframes animate-fade-in{
+  from{
+    opacity: 0;
+    transform: scale(.6);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.fade-in{
+  animation: animate-fade-in 1s ease;
+}
+.hidden-fade-in{
+  opacity: 0;
+}
+
+@keyframes animate-fade-up{
+  from{
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up{
+  animation: animate-fade-up .8s ease;
+}
+.hidden-fade-up{
+  opacity: 0;
+  transform: translateY(40%);
+}
+
+/* End public */
+
+/* Strat Navbar */
+nav{
+  background-color: var(--main-color);
+}
+.dropdown-menu{
+  animation: drop .3s ease;
+}
+.start-menu{
+  right: 100%;
+  top: -5px;
+}
+nav .dropdown .dropdown-toggle:hover + .dropdown-menu, .dropdown-menu:hover{
+  display: block;
+}
+
+@keyframes ani-navbar{
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar-collapse{
+    animation: ani-navbar .5s ease;
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    background-color: #fff;
+    font-size: 22px;
+    overflow-y: scroll;
+  }
+  .dropdown-menu .dropdown-item{
+    font-size: 20px;
+  }
+  .navbar-dark .navbar-nav .nav-link{
+    color: #000 !important;
+  }
+  .start-menu{
+    right: 0;
+    top: 0;
+  }
+}
+
+/* End Navbar */
+
+/* Start Landing */
+@keyframes updonw{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(-20px);
+  }
+}
+.landing{
+  background-color: var(--main-color);
+}
+.landing img{
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: updonw 1s linear infinite alternate;
+}
+.landing h1{
+  font-size: 50px;
+}
+@media screen and (max-width: 768px){
+  .landing h1{
+    font-size: 30px;
+  }
+}
+.landing p{
+  color: rgba(255, 255, 255, 0.6);
+}
+/* End Landing */
+/* Start Clients */
+.clients img{
+  filter: grayscale(100);
+  transition: all .5s;
+}
+.clients img:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+/* End Clients */
+/* Start About */
+.about .about-intro .special-text .true{
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent transparent var(--second-color) var(--second-color);
+  transform: rotate(-45deg);
+  margin-right: 15px;
+  position: relative;
+}
+.about .about-intro .special-text .true::before{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 15px;
+  height: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent transparent var(--second-color) var(--second-color);
+}
+.about .about-intro .btn-outline-info:hover{
+  color: #fff;
+}
+/* End About */
+/* Start Skills */
+.skills .progress .progress-bar{
+  width: 0;
+  transition: width .5s ease !important;
+}
+/* End Skills */
+/* Start Servies */
+.services .card, .services .card-title{
+  transition: all .3s;
+}
+.services .card:hover, .team .card:hover{
+  transform: translateY(-10px);
+}
+.services .card:hover .card-title{
+  color: var(--second-color);
+}
+/* End Servies */
+/* Start Cta */
+.cta{
+  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url(../images/cta-bg.jpg) fixed center center;
+}
+/* End Cta */
+
+/* Start Portfolio */
+
+/* portfolio slider */
+@keyframes animate-portfolio-slider{
+  from{
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.portfolio-slider{
+  background-color: #222;
+  z-index: 1201;
+  animation: animate-portfolio-slider .4s ease-in-out;
+}
+.portfolio-slider .close-slider{
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+.portfolio-slider .close-slider i:hover{
+  color: var(--bs-danger) !important;
+}
+.portfolio-slider .carousel-inner{
+  height: 500px;
+  width: 700px;
+}
+@media screen and (max-width: 567px){
+  .portfolio-slider .carousel-inner{
+    width: 100%;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 567px){
+  .portfolio-slider .carousel-inner{
+    width: 540px;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 768px){
+  .portfolio-slider .carousel-inner{
+    width: 720px;
+  }
+}
+@media screen and (min-width: 991px){
+  .portfolio-slider .carousel-inner{
+    width: 960px;
+  }
+}
+
+
+.portfolio .portfolio-filters li{
+  cursor: pointer;
+  transition: all .3s;
+}
+.portfolio .portfolio-filters li:hover, .portfolio .portfolio-filters li.active{
+  color: #fff;
+  background-color: var(--second-color);
+}
+
+
+@keyframes animate-portfolio-imgs{
+  from{
+    opacity: 0;
+    transform: scale(.5);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.portfolio .imgs-container .col.all{
+  animation: animate-portfolio-imgs .5s ease;
+}
+.portfolio .portfolio-img{
+  height: 220px;
+}
+.portfolio .imgs-container img{
+  transition: all .4s ease;
+  object-fit: cover;
+}
+.portfolio .imgs-container .portfolio-img:hover img{
+  transform: scale(1.1);
+}
+.portfolio .portfolio-img .portfolio-info{
+  background-color: rgba(55, 81, 126, 0.8);
+  color: #fff;
+  transition: all .5s ease;
+  display: none;
+}
+.portfolio .portfolio-img:hover .portfolio-info{
+  display: block;
+}
+.portfolio .portfolio-img .portfolio-info i{
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+}
+.portfolio .portfolio-img .portfolio-info i:hover{
+  color: var(--second-color);
+}
+/* End Portfolio */
+
+/* Start Team */
+.team .card{
+  transition: all .5s;
+}
+.team .card .icons i{
+  transition: all .3s;
+}
+.team .card .icons i:hover{
+  cursor: pointer;
+  background-color: var(--second-color);
+  color: #fff;
+}
+/* End Team */
+/* Start Contact */
+.contact .form-control::placeholder{
+  transition: color .3s ease;
+}
+.contact .form-control:focus::placeholder {
+  color: transparent;
+}
+.contact .contact-info i{
+  color: var(--second-color);
+  background-color: #e7f5fb;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+}
+.contact .contact-info i:hover{
+  color: #fff !important;
+  background-color: var(--second-color);
+}
+/* End Contact */
+
+/* Start Footer */
+.footer .links li::before{
+  font-family: "FontAwesome";
+  content: "\f054";
+  font-size: 10px;
+  color: var(--second-color);
+  margin-right: 5px;
+}
+.footer .links li a:hover{
+  color: var(--second-color) !important;
+} 
+/* End Footer */
